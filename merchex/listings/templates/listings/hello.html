@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-        <h1>Hello Django !</h1>
-        <p>Mes {{ bands|length }} groupes préférés sont  :</p>
-        <ul>
-        {% for band in bands %}
-           <li>{{ band.name }}</li>
-           {% endfor %}
-        </ul>
-</body>
-</html>
+{% extends 'listings/base.html' %}
+    {% block content %}
+    <h1>Hello Django !</h1>
+    <p>Mes {{ bands|length }} groupes préférés sont  :</p>
+    <ul>
+    {% for band in bands %}
+        <li>{{ band.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

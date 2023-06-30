@@ -9,7 +9,7 @@ def hello(request):
     
 
 def about(request):
-    return HttpResponse('<h1>About-us ooh!</h1>')
+    return render(request, 'listings/about.html')
 
 def listings(request):
     listings = Listing.objects.all()
@@ -17,4 +17,4 @@ def listings(request):
     
 
 def contact(request):
-    return HttpResponse('<h1>Page des contacts</h1>')
+    return render(request, 'listings/contact.html')
