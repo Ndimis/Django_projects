@@ -1,9 +1,11 @@
 {% extends 'listings/base.html' %}
     {% block content %}
         <h2>Listing :</h2>
+        <a href="{% url 'listing-create' %}">ajout de liste</a>
         <ul>
         {% for lists in listings %}
-           <li><a href="{% url 'listing-detail' lists.id %}">{{ lists.title }}</a></li>
+           <li><a href="{% url 'listing-detail' lists.id %}">{{ lists.title }}</a> - [<a href="{% url 'listing-update' lists.id%}">Modifier</a>] - 
+            [<a href="{% url 'listing-delete' lists.id %}">Supprimer</a>]</li>
            {% endfor %}
         </ul>
     {% endblock %}
