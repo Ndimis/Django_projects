@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from listings.models import Band, Listing
+from listings.forms import  ContactUsForm
 
 
 def band_list(request):
@@ -25,4 +26,7 @@ def listing_detail(request, list_id):
     
 
 def contact(request):
-    return render(request, 'listings/contact.html')
+    form = ContactUsForm()  # ajout d’un nouveau formulaire ici
+    return render(request,
+          'listings/contact.html',
+          {'form': form})  
