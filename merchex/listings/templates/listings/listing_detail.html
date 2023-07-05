@@ -1,0 +1,20 @@
+{% extends 'listings/base.html' %}
+    {% block content %}
+    <h2>{{ listing.name }}</h2>
+
+        <ul>
+        <li>titre : {{ listing.title }}</li>
+        <li>Description : {{ listing.description }}</li>
+        <li>status : {{ listing.sold |yesno}}</li>
+        <li>Année: {{ listing.year}}</li>
+        <li>Type: {{ listing.get_type_display}}</li>
+        
+        <!-- {% if band.official_homepage %}
+            <li><a href="{{ band.official_homepage }}">{{ band.official_homepage }}</a></li>
+        {% endif %}
+        </ul> -->
+
+   
+
+    
+{% endblock %}
